@@ -5,7 +5,10 @@
     .global vector_end
 
     vector_start:
-        MOV R0, R1
+        LDR R0, =0x10000000
+        #할당 연산, HW ID Register
+        LDR R1, [R0]       
+        # 0x10000000에서 값 읽어서 R1에 저장
     
     vector_end:
         .space 1024, 0
